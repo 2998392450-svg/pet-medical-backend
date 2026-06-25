@@ -11,8 +11,9 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  // PlanetScale / 云数据库通常需要 SSL
-  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : undefined
+  // 云数据库（Aiven/PlanetScale 等）通常需要 SSL
+  // rejectUnauthorized: false 避免自签证书链验证失败
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : undefined
 });
 
 module.exports = pool;
