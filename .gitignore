@@ -1,0 +1,23 @@
+# 依赖
+node_modules/
+
+# Maven 残留（后端已迁移到 Node.js）
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml
+target/
+src/main/
+src/resources/
+
+# 环境变量
+.env
+.env.local
+
+# 日志
+*.log
+npm-debug.log*
+
+# 系统
+.DS_Store
+Thumbs.db
